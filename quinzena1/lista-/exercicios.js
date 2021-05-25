@@ -69,12 +69,17 @@ function calculaIngressosEspetaculo() {
 
 // Exercício 8
 function checaStringsMesmoTamanho() {
-  // escreva seu código aqui
+  let perguntaUm = prompt("Qual seu nome?")
+  let perguntaDois = prompt("Qual seu sobrenome?")
+
+console.log(perguntaUm>=perguntaDois)
 }
 
 // Exercício 9
 function checaIgualdadeDesconsiderandoCase() {
-  // escreva seu código aqui
+  let stringA = prompt("Sua cor favorita?")
+  let stringB = prompt("Sua fruta favorita?")
+  console.log(stringA === stringB)
 }
 
 // Exercício 10
