@@ -49,22 +49,31 @@ function imprimeInformacoesUsuario() {
   const preguntaIdade = prompt("Qual sua idade?")
   const perguntaEmail = prompt("Qual seu email?")
  
-  console.log("Meu nome é",perguntaNome,"tenho",preguntaIdade,"anos, e o meu email é ",perguntaEmail,".")
+  console.log(`Meu nome é ${perguntaNome}, tenho ${preguntaIdade} anos, e o meu email é ${perguntaEmail}.`)
 }
 
 // Exercício 5
 function imprimeTresCoresFavoritas() {
+  const perguntaUm = prompt("Diga uma cor favorita:")
+  const perguntaDois = prompt("Mais uma cor:")
+  const perguntaTres = prompt("A ultima cor favorita:")
+   const cores = [perguntaUm,perguntaDois,perguntaTres]
+   console.log(cores)
   
 }
 
 // Exercício 6
 function retornaStringEmMaiuscula() {
-  // escreva seu código aqui
+ const perguntaUm = prompt("Digite uma palavra")
+console.log(perguntaUm.toLocaleUpperCase())
 }
 
 // Exercício 7
 function calculaIngressosEspetaculo() {
-  // escreva seu código aqui
+  const perguntaUm =Number(prompt("Diga um valor de um espetaculo:"))
+  const perguntaDois = Number(prompt("Diga o valor de cada ingresso:"))
+  let minimoIngressosVendidos = perguntaUm/perguntaDois
+  console.log(minimoIngressosVendidos)
 }
 
 // Exercício 8
@@ -79,20 +88,36 @@ console.log(perguntaUm>=perguntaDois)
 function checaIgualdadeDesconsiderandoCase() {
   let stringA = prompt("Sua cor favorita?")
   let stringB = prompt("Sua fruta favorita?")
-  console.log(stringA === stringB)
+  console.log(stringA.toLowerCase() === stringB.toLowerCase())
 }
 
 // Exercício 10
 function checaRenovacaoRG() {
-  // escreva seu código aqui
+ const anoAtual = Number(prompt("Qual o ano atual?"))
+ const anoNascimento = Number(prompt("Qual seu ano de nascimento?"))
+ const anoEmissao = Number(prompt("Quando sua identidade foi emitida?"))
+
+ let idadePessoa = anoAtual-anoNascimento
+ let idadeRg = anoAtual - anoEmissao 
+
+let necessitaReno = idadePessoa<=20 && idadeRg >= 5
+let necessitaRenoV = idadePessoa >20 && idadePessoa <=50 && idadeRg >= 10
+let necessitaRenova = idadePessoa>50 && idadeRg >=15
+
+console.log((idadePessoa<=20 && idadeRg >= 5) ||(idadePessoa >20 && idadePessoa <=50 && idadeRg >= 10) ||( idadePessoa>50 && idadeRg >=15))
 }
 
 // Exercício 11
 function checaAnoBissexto() {
-  // escreva seu código aqui
+  const pergunta = Number(prompt("Digite um ano:"))
+console.log((pergunta%400 === 0) || (pergunta%4 === 0) && !(pergunta%100 ===0 )) 
 }
 
 // Exercício 12
 function checaValidadeInscricaoLabenu() {
-  // escreva seu código aqui
+   const perguntaIdade = prompt("Voê tem mais de 18 anos?")
+   const perguntaEscola = prompt("Você tem ensino medio completo?")
+   const perguntaHorario = prompt("Você possui disponibilidade exclusiva durante os horários do curso?")
+   let resposta = "sim"
+console.log((perguntaIdade === resposta) && (perguntaEscola === resposta) && (perguntaHorario === resposta))
 }
