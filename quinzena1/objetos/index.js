@@ -39,10 +39,36 @@ const ela = {
     idade:22,
     profissão:"estudante"
 }
-function fraseDois(objeto,objetoUm,objetoDois){
+function fraseDois(objeto,tamanhoObjeto,objetoUm,objetoDois,tamanhoObjetoDois){
     let msg = []
     msg.push(objeto)
+    msg.push(tamanhoObjeto)
     msg.push(objetoUm)
     msg.push(objetoDois)
+    msg.push(tamanhoObjetoDois)
+    return msg
 }
-console.log(fraseDois(eu.nome,eu.idade,eu.profissão))
+console.log(fraseDois(eu.nome,eu.nome.length,eu.idade,eu.profissão,eu.profissão.length))
+
+//Exercício de Escrita de Código 3
+
+const carrinho = []
+const frutaUm = {
+    nome: "Banana",
+    disponibilidade: true
+}
+const frutaDois = {
+    nome:"Limão",
+    disponibilidade: true
+}
+const frutaTres = {
+    nome:"Pera",
+    disponibilidade: true
+}
+function juntarTudo(obj,obje,objet){
+    carrinho.push(obj)
+    carrinho.push(obje)
+    carrinho.push(objet)
+}
+carrinho.push(juntarTudo(frutaUm,frutaDois,frutaTres))
+console.log(carrinho)
