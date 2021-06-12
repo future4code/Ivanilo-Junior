@@ -10,22 +10,24 @@
  * 
  * 
  */
+const cartaUsurario = comprarCarta()
+const sCartaUsuario = comprarCarta()
+const cartaPc = comprarCarta()
+const sCartaPc = comprarCarta()
+
 console.log("Bem vindo ao jogo de Blackjack!")
     if (confirm("Iniciar uma nova rodada?")){
+      console.log("Usuário - cartas:",cartaUsurario.texto, sCartaUsuario.texto,"- pontuação: ",cartaUsurario.valor + sCartaUsuario.valor )
+      console.log("Computador - cartas:",cartaPc.texto,sCartaPc.texto,"- pontuação:",cartaPc.valor+sCartaPc.valor);
+      if (cartaUsurario.valor+sCartaUsuario.valor>sCartaPc.valor+cartaPc.valor &&cartaUsurario.valor+sCartaUsuario.valor<=21 ){
+         console.log("O usuário ganhou!")
+      }else if (cartaPc.valor+sCartaPc.valor>cartaUsurario.valor+sCartaUsuario.valor && sCartaPc.valor+cartaPc.valor<=21){
+         console.log("O computador ganhou!")
+      }else{
+         console.log("Empate!")
+      }
     }else{
        console.log("O jogo acabou.")
-    }
-
-   function baralho(numero,nipe){
-   const J = 10
-   const Q = 10
-   const K = 10
-   const A = 11
-   const cartas = {
-   numeros: [1,2,3,4,5,6,7,8,9,,10,J,Q,K,A]
-   }
-   const nipes = {
-      nipes:["♠","♣","♥","♦"]
-   }
+       
 }
-console.log(carta.texto)
+console.log
