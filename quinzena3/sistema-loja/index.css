@@ -1,0 +1,86 @@
+h1{
+    background-color: lightslategray;
+    padding: 5px;
+    padding-left: 30vw;
+    border: solid 1px black;
+}
+#bordao{
+    padding-left: 38vw;
+}
+#divLinks{
+    background-color: lightslategrey;
+    border: solid 1px black;
+}
+a{
+    color: black;
+    padding: 30px;
+}
+#primeiroA{
+    padding-left: 27vw;
+}
+#divLinksDois{
+    background-color: lightslategrey;
+    border: solid 1px black;
+}
+#segundoA{
+    padding-left: 27vw;
+}
+#divLinksTres{
+    background-color: lightslategrey;
+    border: solid 1px black;
+}
+#terceiroA{
+    padding-left: 27vw;
+}
+#divLinksQuatro{
+    background-color: lightslategrey;
+    border: solid 1px black;
+}
+#quartoA{
+    padding-left: 27vw;
+}
+h2{
+    padding-left: 40vw;
+}
+#imagemUm{
+    width: 100px;
+    padding: 160px;
+}
+#imagemDois{
+    width: 100px;
+    padding: 160px;
+}
+#imagemTres{
+    width: 100px;
+    padding: 160px;
+}
+#mouse{
+    width: 200px;
+    padding-left: 200px;
+}
+#teclado{
+    width: 200px;
+    padding-left: 200px;
+}
+#mousepad{
+    width: 200px;
+    padding-left: 200px;
+}
+#cadeira{
+    width: 200px;
+    padding-left: 200px;
+}
+#headset{
+    width: 200px;
+    padding-left: 200px;
+}
+td{
+    padding: 80px;
+}
+th{
+    background-color: lightslategrey;
+    border: solid 1px black;
+}
+#ivone{
+    padding-left: 43vw;
+}
