@@ -6,16 +6,13 @@ state={
     ListaUsuarios:[]
 }
 
-imprimirLista = () =>{
-    this.state.ListaUsuarios.map((item,indice)=>{
-        return (
-            <li>{item.indice}</li>
-        )
-    })
-}
-
 componentDidMount(){
-    axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',{
+    this.exibirPLaylist();
+}
+componentDidUpdate(){
+    this.exibirPLaylist();
+}
+exibirPLaylist = () => {axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',{
         headers:{
             "Authorization": "ivanilo-junior-johnson"
         }
@@ -23,12 +20,28 @@ componentDidMount(){
         this.setState({ListaUsuarios:response.data});
     })
 }
+
+onClickRemover = (id) => {
+    axios.delete
+    (`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`,{
+        headers:{
+            Authorization: 'ivanilo-junior-johnson'
+        }
+    }).then((response)=>{
+        alert('Usuario removido!')
+    }).catch((error)=>{
+        alert(error)
+    })
+}
+
     render(){
-        console.log(this.state)
+        const mostrarPlaylist = this.state.ListaUsuarios.map((item,i)=>{
+            return <li key={i}>{item.name}<button onClick={()=>{this.onClickRemover(item.id)}}>x</button></li>
+        })
          return(
             <div>
-                <h1>Usuarios</h1>
-                {this.imprimirLista()}
+                <h2>Usuarios</h2>
+                {mostrarPlaylist}
             </div>
         )
     }

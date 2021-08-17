@@ -1,6 +1,16 @@
 import React from 'react';
 import Usuarios from './Paginas/Usuarios'
 import Home from './Paginas/Home'
+import styled from 'styled-components';
+
+const Main = styled.main`
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+height: 100%;
+padding: 10%;
+`
 
 export default class App extends React.Component{
   state={
@@ -33,9 +43,9 @@ export default class App extends React.Component{
     <div>
       <button onClick = {this.onClickUsuarios}>{buttonName}
       </button>
-      <main>
+      <Main>
         {page}
-      </main>
+      </Main>
     </div>
     )
   }

@@ -1,17 +1,26 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const Input = styled.input`
+display: flex;
+flex-direction: column;
+`
 
 export default class Home extends React.Component{
     state={
         InputEmail:'',
         InputNome:'',
     }
+    
     onChangeEmail = (event) =>{
         this.setState({InputEmail:event.target.value})
     }
+
     onChangeNome = (event) =>{
         this.setState({InputNome:event.target.value})
     }
+
     onClickInscrever = () =>{
         axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',
         {
@@ -27,12 +36,13 @@ export default class Home extends React.Component{
             alert(error)
         })
     }
+
     render(){
         return(
             <div>
-                <h1>Inscreva-se</h1>
-                <input placeholder='Email' onChange={this.onChangeEmail}></input>
-                <input placeholder='Nome' onChange={this.onChangeNome}></input>
+                <h2>Inscreva-se</h2>
+                <Input placeholder='Email' onChange={this.onChangeEmail}></Input>
+                <Input placeholder='Nome' onChange={this.onChangeNome}></Input>
                 <button onClick={this.onClickInscrever}>Inscrever-se</button>
                 
              </div>
