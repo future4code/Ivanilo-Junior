@@ -31,7 +31,11 @@ apagarPlaylist = (id) =>{
 
 
     render(){
-        const printLista = this.state.lista.map((item,i)=>{return <li key={i}>{item.name}<button onClick={()=>{this.apagarPlaylist(item.id)}}>x</button></li>})
+        const printLista = 
+        this.state.lista.map((item,i)=>
+        {return <li key={i}>{item.name}
+        <button onClick={()=>{this.apagarPlaylist(item.id)}}>x</button>
+        </li>})
 
         return(
             <div>
