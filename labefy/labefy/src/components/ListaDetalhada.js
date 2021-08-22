@@ -6,14 +6,13 @@ state={
     lista:[],
     musicas:[],
     ids:'',
-    InputMusica:'',
-    InputArtista:'',
-    InputUrl:''
+    srcDoAudio:'',
 }
 componentDidMount(){
-    this.pegarPlaylists()
+    this.pegarPlaylists();
 }
 componentDidUpdate(){
+
 }
 
     pegarPlaylists = () =>{
@@ -40,11 +39,10 @@ componentDidUpdate(){
                const nomeMusica= prompt('Nome da Musica:');
                const artistaMusica = prompt('Nome do Artista/Banda:');
                const urlMusica = prompt('Link da Musica:');
-               this.setState({InputMusica:nomeMusica,InputArtista:artistaMusica,InputUrl:urlMusica});
                axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`,{
-                   'name':this.state.InputMusica,
-                   'artist':this.state.InputArtista,
-                   'url':this.state.InputUrl,
+                   'name':nomeMusica,
+                   'artist':artistaMusica,
+                   'url':urlMusica,
                },{
                    headers:{
                        Authorization:'ivanilo-junior-johnson'
@@ -56,22 +54,28 @@ componentDidUpdate(){
                })
             }
     }
+    onClickPlay = (url) =>{
+        this.setState({srcDoAudio:url})
+    }
 
 
     render(){
         const printMusicas = this.state.musicas.map((item,i)=>{
-            return <div><p key={i}>Musica:{item.name}</p><p>Artista:{item.artist}</p></div>
-        })
+            return <div><p key={i}>Musica: {item.name}</p><p>Artista: {item.artist}</p>
+            <button onClick={()=>{{this.onClickPlay(item.url)}}}>{'>'}</button></div>
+        });
+
         const printLista = this.state.lista.map((item,i)=>
         {{return <li key={i}>{item.name}
         <button onClick={()=>{{this.pegarMusicas(item.id)}}}>^</button>
         <button onClick={()=>{{this.onClickAdcionar(item.id)}}}>+</button>
         {this.state.ids===item.id ?<p>{printMusicas}</p>:undefined}
-        </li>}})
+        </li>}});
 console.log(this.state)
         return(
             <div>
                 {printLista}
+                <audio src={this.state.srcDoAudio} controls preload autoPlay></audio>
             </div>
         )
     }
