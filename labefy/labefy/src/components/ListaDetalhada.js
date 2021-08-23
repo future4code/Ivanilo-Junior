@@ -116,7 +116,7 @@ componentDidUpdate(){
         <img src={remover} onClick={()=>{this.apagarPlaylist(item.id)}}></img>
         {this.state.ids===item.id ?<p>{printMusicas}</p>:undefined}
         </div></Lista>}});
-console.log(this.state)
+        
         return(
             <DivPrincipla>
                 <Divisoria></Divisoria>
