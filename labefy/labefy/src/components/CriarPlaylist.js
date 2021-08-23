@@ -1,10 +1,32 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+import adcplaylist from '../icones/adcplaylist.png'
 
+const Body = styled.div`
+display:flex;
+justify-content: center;
+align-items: center;
+height: 60px;
+`
+const InputPlaylist = styled.input`
+border-radius:30px;
+border: none;
+height: 20px;
+border:solid 2px;
+`
+const BotaoAdcionar = styled.button`
+border-radius: 30px;
+border:none;
+`
+const Texto = styled.h3`
+padding-right: 10px;
+`
 export default class CriarPlaylist extends React.Component{
 state={
     InputName:'',
 }
+
 OnChangeInputName = (event) =>{
     this.setState({InputName:event.target.value})
 }
@@ -21,21 +43,19 @@ CreatePlaylist = () => {
     }).catch((error)=>{
         alert(error)
     })
-    this.setState({
-        InputName:''
-    })
-} 
+}
+
+
     render(){
         return(
-    <div>
-        <input 
+    <Body>
+        <Texto>Adcionar Playlist</Texto>
+        <InputPlaylist 
         onChange={this.OnChangeInputName}
-        placeholder='Playlist'> 
-        </input>
-        <button 
-        onClick={this.CreatePlaylist}>+
-        </button>
-    </div>
+        placeholder='Nome'>
+        </InputPlaylist>
+        <img src={adcplaylist}onClick={this.CreatePlaylist}></img>
+    </Body>
     )
 }
 }
